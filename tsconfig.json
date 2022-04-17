@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2018", 
+    "module": "commonjs",
+    "allowJs": true, //允许混合编译JavaScript文件
+    // "strict": true, // 是否开启严格模式
+    "esModuleInterop": true, // 允许我们使用commonjs的方式import默认文件
+    // "noEmit": true, // 开启这个选项表示当发生错误的时候，编译器不会生成JavaScript 代码。
+    "experimentalDecorators": true, 
+    "emitDecoratorMetadata": true,  
+    // "skipLibCheck": true,                       
+    // "forceConsistentCasingInFileNames": true,
+    "rootDir": "./src",
+    "outDir": "./build",
+    // "target": "ES2019",
+    // "module": "commonjs",
+    // "emitDecoratorMetadata": true,
+    // "experimentalDecorators": true,
+    // "rootDir": "./src",
+    // "outDir": "./build",
+    // "esModuleInterop": true,
+    // "allowJs": true,
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}

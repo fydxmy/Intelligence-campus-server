@@ -1,0 +1,11 @@
+**/*.svg
+package.json
+.gitignore
+.prettierignore
+*.pn
+.editorconfig
+yarn-error.log
+/public
+tsconfig.json
+yarn.lock
+commitlint.config.js
