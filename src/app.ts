@@ -1,5 +1,4 @@
 import Koa from 'koa';
-import mysql from './db/mysql';
 import SendMiddleWarte from './middlewares/sendMiddleWarte';
 import CorsOptions from './middlewares/corsOptions';
 import userRouter from './router/userRouter';
@@ -8,6 +7,7 @@ import koaStatic from 'koa-static';
 import koaBody from 'koa-body';
 import config from './config';
 import koaLogger from 'koa-logger';
+import campusNewsRouter from './router/campusNews';
 
 /**
  * 实例化 dotenv
@@ -22,18 +22,6 @@ app.use(CorsOptions());
 /**
  * 连接mysql数据库
  */
-mysql
-  .authenticate()
-  .then(() => {
-    console.log('数据连接成功');
-  })
-  .catch(() => {
-    console.log('数据库连接失败');
-  });
-// 执行同步
-// mysql.sync({ force: false }).then(() => {
-//   console.log('sync ok');
-// });
 
 app.use(SendMiddleWarte()); // 统一接口返回
 app.use(koaLogger());
@@ -54,10 +42,10 @@ app.use(
  */
 app.use(userRouter.routes());
 app.use(classRouter.routes());
-app.use(koaStatic(__dirname + '../public'));
+app.use(campusNewsRouter.routes());
+app.use(koaStatic(__dirname + '/public'));
 if (config) {
-  app.listen(config.server.port, () => {
-    // @ts-ignore
+  app.listen(config.server.port, function () {
     console.log(`服务启动成功，端口号${config.server.port}`);
   });
 }

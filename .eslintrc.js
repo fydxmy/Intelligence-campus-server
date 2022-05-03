@@ -30,6 +30,8 @@ module.exports = {
     ],
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',
+    'no-empty': 'off',
+    'no-useless-escape': 'off',
   },
 };
 

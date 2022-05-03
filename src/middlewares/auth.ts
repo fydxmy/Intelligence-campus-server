@@ -4,22 +4,22 @@ import config from '../config';
 declare module 'koa' {
   interface Request extends Koa.BaseRequest {
     auth: {
-      studentID: number;
+      studentId: string;
     };
   }
 }
 
 export default function auth() {
-  (ctx: Koa.Context, next: Koa.Next) => {
+  return async (ctx: Koa.Context, next: Koa.Next) => {
     const token = ctx.request.get('Authorization');
     if (token) {
-      Jwt.verify(token, config.jwtKey.privateKey, async (err, data: { studentID: number }) => {
+      await Jwt.verify(token, config.jwtKey.publicKey, async (err, data: { studentId: string }) => {
         if (err) {
           ctx.status = 401;
           ctx.sendSuccess({}, 'token错误，身份验证失败', -1);
         } else {
           ctx.request.auth = data;
-          next();
+          await next();
         }
       });
     } else {

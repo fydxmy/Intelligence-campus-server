@@ -1,15 +1,35 @@
-import { Sequelize } from 'sequelize';
+import mysql from 'mysql';
 import config from '../config';
 const { database, user, password, options } = config.mysql;
-const mysqlConnect = new Sequelize(database, user, password, {
-  host: options.host,
-  port: options.port,
-  dialect: 'mysql',
-  pool: {
-    max: 10, // 连接池钟最大的连接数量
-    min: 0, // 最小
-    idle: 10000, // 如果一个连接池 10s 之内没有被使用，则释放
-  },
-});
+const connObj = {};
+export function getConn(name: string): mysql.Pool {
+  if (!connObj[name]) {
+    connObj[name] = mysql.createPool({
+      host: options.host,
+      user,
+      database,
+      password,
+    });
+  }
+  return connObj[name];
+}
 
-export default mysqlConnect;
+export async function executeSQL(sql: string, sqlName: string) {
+  const conn = getConn(sqlName);
+  return new Promise((resolve, reject) => {
+    conn.getConnection((err, connection) => {
+      if (err) {
+        reject(err);
+      } else {
+        connection.query(sql, (err, data) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(data);
+          }
+          connection.release();
+        });
+      }
+    });
+  });
+}

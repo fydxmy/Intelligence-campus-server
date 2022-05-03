@@ -1,12 +1,15 @@
 import { DefaultState, Context } from 'koa';
 import koaRouter from 'koa-router';
-import indexController from '../controller/auth';
-// import auth from '../middlewares/auth';
+import authController from '../controller/auth';
+import { QueryStudentStatus } from '../controller/auth/QueryStudentStatus';
+import { authTokenController, QueryUserInfo } from '../controller/auth/userInfo';
+import auth from '../middlewares/auth';
 
 const router = new koaRouter<DefaultState, Context>({ prefix: '/user' });
-// router.prefix('/user');
 
-router.post('/register', indexController.register);
-router.post('/login', indexController.login);
-// router.allowedMethods();
+router.post('/register', authController.register);
+router.post('/login', authController.login);
+router.post('/auth', auth(), authTokenController);
+router.get('/queryStudentStatus', auth(), QueryStudentStatus);
+router.get('/userinfo', auth(), QueryUserInfo);
 export default router;
