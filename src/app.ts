@@ -8,6 +8,7 @@ import koaBody from 'koa-body';
 import config from './config';
 import koaLogger from 'koa-logger';
 import campusNewsRouter from './router/campusNews';
+import uploadSingleFileRouter from './router/uploadSingleFileRouter';
 
 /**
  * 实例化 dotenv
@@ -43,6 +44,7 @@ app.use(
 app.use(userRouter.routes());
 app.use(classRouter.routes());
 app.use(campusNewsRouter.routes());
+app.use(uploadSingleFileRouter.routes());
 app.use(koaStatic(__dirname + '/public'));
 if (config) {
   app.listen(config.server.port, function () {

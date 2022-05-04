@@ -6,18 +6,13 @@ import Bcryptjs from 'bcryptjs';
 import { getConn } from '../../db/mysql';
 
 type requestType = {
-  /** 学号 */
   studentId: string;
-  /** 密码 */
   passWord: string;
-  /** 电话 */
   phoneNumber: string;
 };
 
 type LoginRequestType = {
-  /** 学号 */
-  studentId: string;
-  /** 密码 */
+  phoneNumber: string;
   passWord: string;
 };
 class IndexController {
@@ -63,11 +58,11 @@ class IndexController {
     }
   }
   async login(ctx: Context) {
-    const { studentId, passWord } = ctx.request.body as LoginRequestType;
+    const { phoneNumber, passWord } = ctx.request.body as LoginRequestType;
     const conn = getConn('userAuths');
     try {
       const findRes = await new Promise((resolve, reject) => {
-        const sql = `SELECT * FROM userAuths WHERE studentId=${studentId}`;
+        const sql = `SELECT * FROM userAuths WHERE phoneNumber=${phoneNumber}`;
         conn.query(sql, (err, data) => {
           if (err) {
             reject(err);
@@ -76,9 +71,10 @@ class IndexController {
         });
       });
       if (findRes[0]) {
+        const { phoneNumber, studentId, role } = findRes[0];
         const verifyRes = Bcryptjs.compareSync(passWord, findRes[0].passWord);
         if (verifyRes) {
-          const token = Jwt.sign({ studentId }, config.jwtKey.publicKey, {
+          const token = Jwt.sign({ phoneNumber, studentId, role }, config.jwtKey.publicKey, {
             expiresIn: '2h',
           });
           ctx.sendSuccess({ token }, '登录成功');

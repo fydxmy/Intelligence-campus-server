@@ -1066,6 +1066,13 @@
   dependencies:
     "@types/koa" "*"
 
+"@types/koa-multer@^1.0.1":
+  version "1.0.1"
+  resolved "https://mirrors.tencent.com/npm/@types%2fkoa-multer/-/koa-multer-1.0.1.tgz#9c9734a9011682e959f0c423c3df7077586ced5a"
+  integrity sha512-KFUcRz+qZVMNxFFFyOkuabvoYELx4sCrwSN3EFJ39GQBRCvO9UOatOX2eKUi0TQiGoxkuvAXyPUCK4JnV9FTOg==
+  dependencies:
+    "@types/koa" "*"
+
 "@types/koa-redis@4.0.0":
   version "4.0.0"
   resolved "https://mirrors.tencent.com/npm/@types%2fkoa-redis/-/koa-redis-4.0.0.tgz#648db9682353715e288c65fe50f9aaec6ad87608"
@@ -1204,6 +1211,11 @@
   integrity sha512-uci4Esokrw9qGb9bvhhSVEjd6rkny/dk5PK/Qz4yxKiyppEI+dOPlNrZBahE3i+PoKFYyDxChVXZ/ysS/nrm1Q==
   dependencies:
     "@types/superagent" "*"
+
+"@types/uuid@^8.3.4":
+  version "8.3.4"
+  resolved "https://mirrors.tencent.com/npm/@types%2fuuid/-/uuid-8.3.4.tgz#bd86a43617df0594787d38b735f55c805becf1bc"
+  integrity sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==
 
 "@types/yargs-parser@*":
   version "21.0.0"
@@ -1508,6 +1520,11 @@ anymatch@^3.0.3:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
+append-field@^0.1.0:
+  version "0.1.0"
+  resolved "https://mirrors.tencent.com/npm/append-field/-/append-field-0.1.0.tgz#6ddc58fa083c7bc545d3c5995b2830cc2366d44a"
+  integrity sha1-bdxY+gg8e8VF08WZWygwzCNm1Eo=
+
 arg@^4.1.0:
   version "4.1.3"
   resolved "https://mirrors.tencent.com/npm/arg/-/arg-4.1.3.tgz#269fc7ad5b8e42cb63c896d5666017261c144089"
@@ -1702,6 +1719,14 @@ buffer-from@^1.0.0:
   version "1.1.2"
   resolved "https://mirrors.tencent.com/npm/buffer-from/-/buffer-from-1.1.2.tgz#2b146a6fd72e80b4f55d255f35ed59a3a9a41bd5"
   integrity sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==
+
+busboy@^0.2.11:
+  version "0.2.14"
+  resolved "https://mirrors.tencent.com/npm/busboy/-/busboy-0.2.14.tgz#6c2a622efcf47c57bbbe1e2a9c37ad36c7925453"
+  integrity sha1-bCpiLvz0fFe7vh4qnDetNseSVFM=
+  dependencies:
+    dicer "0.2.5"
+    readable-stream "1.1.x"
 
 bytes@3.1.2, bytes@^3.1.0:
   version "3.1.2"
@@ -1973,7 +1998,7 @@ concat-map@0.0.1:
   resolved "https://mirrors.tencent.com/npm/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
-concat-stream@^1.4.7:
+concat-stream@^1.4.7, concat-stream@^1.5.0:
   version "1.6.2"
   resolved "https://mirrors.tencent.com/npm/concat-stream/-/concat-stream-1.6.2.tgz#904bdf194cd3122fc675c77fc4ac3d4ff0fd1a34"
   integrity sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==
@@ -2424,6 +2449,14 @@ dezalgo@1.0.3:
   dependencies:
     asap "^2.0.0"
     wrappy "1"
+
+dicer@0.2.5:
+  version "0.2.5"
+  resolved "https://mirrors.tencent.com/npm/dicer/-/dicer-0.2.5.tgz#5996c086bb33218c812c090bddc09cd12facb70f"
+  integrity sha1-WZbAhrszIYyBLAkL3cCc0S+stw8=
+  dependencies:
+    readable-stream "1.1.x"
+    streamsearch "0.1.2"
 
 diff-sequences@^27.5.1:
   version "27.5.1"
@@ -3415,7 +3448,7 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-inherits@2, inherits@2.0.4, inherits@^2.0.3, inherits@~2.0.3:
+inherits@2, inherits@2.0.4, inherits@^2.0.3, inherits@~2.0.1, inherits@~2.0.3:
   version "2.0.4"
   resolved "https://mirrors.tencent.com/npm/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
@@ -3529,6 +3562,11 @@ is-typedarray@^1.0.0:
   version "1.0.0"
   resolved "https://mirrors.tencent.com/npm/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
   integrity sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
+
+isarray@0.0.1:
+  version "0.0.1"
+  resolved "https://mirrors.tencent.com/npm/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
+  integrity sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
 
 isarray@~1.0.0:
   version "1.0.0"
@@ -4210,6 +4248,13 @@ koa-logger@^3.2.1:
     humanize-number "0.0.2"
     passthrough-counter "^1.0.0"
 
+koa-multer@^1.0.2:
+  version "1.0.2"
+  resolved "https://mirrors.tencent.com/npm/koa-multer/-/koa-multer-1.0.2.tgz#d38f7ffd1db97b1aad33e7774732f000ebd67259"
+  integrity sha512-0kFzN4atVd+9oiG+4fYxQ9S2T3dPhKNvmhITIY606Qn9wLEmfhW0DhSpOzRYhddN//4rh/TCK95TMtflmFa5lA==
+  dependencies:
+    multer "1.3.0"
+
 koa-redis@4.0.0:
   version "4.0.0"
   resolved "https://mirrors.tencent.com/npm/koa-redis/-/koa-redis-4.0.0.tgz#565dc700190432989fb2096ca4341240a84698dd"
@@ -4633,6 +4678,18 @@ minimist@^1.2.5:
   resolved "https://mirrors.tencent.com/npm/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
+minimist@^1.2.6:
+  version "1.2.6"
+  resolved "https://mirrors.tencent.com/npm/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
+
+mkdirp@^0.5.1:
+  version "0.5.6"
+  resolved "https://mirrors.tencent.com/npm/mkdirp/-/mkdirp-0.5.6.tgz#7def03d2432dcae4ba1d611445c48396062255f6"
+  integrity sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==
+  dependencies:
+    minimist "^1.2.6"
+
 modify-values@^1.0.0:
   version "1.0.1"
   resolved "https://mirrors.tencent.com/npm/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
@@ -4657,6 +4714,20 @@ ms@^2.1.1:
   version "2.1.3"
   resolved "https://mirrors.tencent.com/npm/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
+
+multer@1.3.0:
+  version "1.3.0"
+  resolved "https://mirrors.tencent.com/npm/multer/-/multer-1.3.0.tgz#092b2670f6846fa4914965efc8cf94c20fec6cd2"
+  integrity sha1-CSsmcPaEb6SRSWXvyM+Uwg/sbNI=
+  dependencies:
+    append-field "^0.1.0"
+    busboy "^0.2.11"
+    concat-stream "^1.5.0"
+    mkdirp "^0.5.1"
+    object-assign "^3.0.0"
+    on-finished "^2.3.0"
+    type-is "^1.6.4"
+    xtend "^4.0.0"
 
 mysql@^2.18.1:
   version "2.18.1"
@@ -4741,6 +4812,11 @@ nwsapi@^2.2.0:
   version "2.2.0"
   resolved "https://mirrors.tencent.com/npm/nwsapi/-/nwsapi-2.2.0.tgz#204879a9e3d068ff2a55139c2c772780681a38b7"
   integrity sha512-h2AatdwYH+JHiZpv7pt/gSX1XoRGb7L/qSIeuqA6GwYoF9w1vP1cw42TO0aI2pNyshRK5893hNSl+1//vHK7hQ==
+
+object-assign@^3.0.0:
+  version "3.0.0"
+  resolved "https://mirrors.tencent.com/npm/object-assign/-/object-assign-3.0.0.tgz#9bedd5ca0897949bca47e7ff408062d549f587f2"
+  integrity sha1-m+3VygiXlJvKR+f/QIBi1Un1h/I=
 
 object-inspect@^1.12.0, object-inspect@^1.9.0:
   version "1.12.0"
@@ -5197,6 +5273,16 @@ read-pkg@^5.2.0:
     normalize-package-data "^2.5.0"
     parse-json "^5.0.0"
     type-fest "^0.6.0"
+
+readable-stream@1.1.x:
+  version "1.1.14"
+  resolved "https://mirrors.tencent.com/npm/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
+  integrity sha1-fPTFTvZI44EwhMY23SB54WbAgdk=
+  dependencies:
+    core-util-is "~1.0.0"
+    inherits "~2.0.1"
+    isarray "0.0.1"
+    string_decoder "~0.10.x"
 
 readable-stream@2, readable-stream@2.3.7, readable-stream@^2.2.2, readable-stream@~2.3.6:
   version "2.3.7"
@@ -5655,6 +5741,11 @@ streamroller@^3.0.4:
     debug "^4.3.3"
     fs-extra "^10.0.1"
 
+streamsearch@0.1.2:
+  version "0.1.2"
+  resolved "https://mirrors.tencent.com/npm/streamsearch/-/streamsearch-0.1.2.tgz#808b9d0e56fc273d809ba57338e929919a1a9f1a"
+  integrity sha1-gIudDlb8Jz2Am6VzOOkpkZoanxo=
+
 string-argv@^0.3.1:
   version "0.3.1"
   resolved "https://mirrors.tencent.com/npm/string-argv/-/string-argv-0.3.1.tgz#95e2fbec0427ae19184935f816d74aaa4c5c19da"
@@ -5692,6 +5783,11 @@ string_decoder@^1.1.1:
   integrity sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==
   dependencies:
     safe-buffer "~5.2.0"
+
+string_decoder@~0.10.x:
+  version "0.10.31"
+  resolved "https://mirrors.tencent.com/npm/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
+  integrity sha1-YuIDvEF2bGwoyfyEMB2rHFMQ+pQ=
 
 string_decoder@~1.1.1:
   version "1.1.1"
@@ -6061,7 +6157,7 @@ type-fest@^0.8.1:
   resolved "https://mirrors.tencent.com/npm/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
-type-is@^1.6.14, type-is@^1.6.16:
+type-is@^1.6.14, type-is@^1.6.16, type-is@^1.6.4:
   version "1.6.18"
   resolved "https://mirrors.tencent.com/npm/type-is/-/type-is-1.6.18.tgz#4e552cd05df09467dcbc4ef739de89f2cf37c131"
   integrity sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==
@@ -6320,7 +6416,7 @@ xmlchars@^2.2.0:
   resolved "https://mirrors.tencent.com/npm/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
 
-xtend@~4.0.1:
+xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.2"
   resolved "https://mirrors.tencent.com/npm/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
   integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
