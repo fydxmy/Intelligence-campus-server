@@ -1,15 +1,10 @@
-import { Context } from 'koa';
-import { getConn } from '../../db/mysql';
-// import { Class } from '../../model/mysql/Class';
-import { currentDate } from '../../utils';
-
-type queryClassQueryType = {
-  pageNumber: number;
-  pageSize: number;
-};
-export async function queryClass(ctx: Context) {
-  const { pageNumber = 1, pageSize = 10 } = ctx.query as unknown as queryClassQueryType;
-  const conn = getConn('classes');
+'use strict';
+Object.defineProperty(exports, '__esModule', { value: true });
+exports.addClass = exports.queryClass = void 0;
+const mysql_1 = require('../../db/mysql');
+async function queryClass(ctx) {
+  const { pageNumber = 1, pageSize = 10 } = ctx.query;
+  const conn = (0, mysql_1.getConn)('classes');
   try {
     const list = await new Promise((resolve, reject) => {
       const sql = `SELECT * FROM classes LIMIT ${(pageNumber - 1) * pageSize}, ${pageSize}`;
@@ -37,6 +32,7 @@ export async function queryClass(ctx: Context) {
     ctx.sendError(null);
   }
 }
+exports.queryClass = queryClass;
 // interface addClassBodyType {
 //   classNumber: string; // 班级名称
 //   grade: number;
@@ -45,7 +41,7 @@ export async function queryClass(ctx: Context) {
 //   createdAt: string;
 //   updatedAt: string;
 // }
-export async function addClass(ctx: Context) {
+async function addClass(ctx) {
   // const { classNumber, grade, collegeId, specialtyName } = ctx.body as unknown as addClassBodyType;
   // // const list = await Class.create({
   // //   classNumber,
@@ -61,3 +57,4 @@ export async function addClass(ctx: Context) {
   //   total,
   // });
 }
+exports.addClass = addClass;

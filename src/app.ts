@@ -1,14 +1,15 @@
 import Koa from 'koa';
 import SendMiddleWarte from './middlewares/sendMiddleWarte';
 import CorsOptions from './middlewares/corsOptions';
-import userRouter from './router/userRouter';
-import classRouter from './router/classRouter';
 import koaStatic from 'koa-static';
 import koaBody from 'koa-body';
 import config from './config';
 import koaLogger from 'koa-logger';
+import classRouter from './router/classRouter';
+import userRouter from './router/userRouter';
 import campusNewsRouter from './router/campusNews';
 import uploadSingleFileRouter from './router/uploadSingleFileRouter';
+import sutuoRouter from './router/sutuoRouter';
 
 /**
  * 实例化 dotenv
@@ -45,6 +46,7 @@ app.use(userRouter.routes());
 app.use(classRouter.routes());
 app.use(campusNewsRouter.routes());
 app.use(uploadSingleFileRouter.routes());
+app.use(sutuoRouter.routes());
 app.use(koaStatic(__dirname + '/public'));
 if (config) {
   app.listen(config.server.port, function () {

@@ -1,15 +1,28 @@
-import moment from 'moment';
-import Charset from 'superagent-charset';
-import SuperAgent from 'superagent';
+'use strict';
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule ? mod : { default: mod };
+  };
+Object.defineProperty(exports, '__esModule', { value: true });
+exports.ObjStr =
+  exports.ObjToStrQuoteWhere =
+  exports.ObjToStrQuote =
+  exports.clearEmptyValue =
+  exports.getWebHTMLstr =
+  exports.currentDate =
+    void 0;
+const moment_1 = __importDefault(require('moment'));
+const superagent_charset_1 = __importDefault(require('superagent-charset'));
+const superagent_1 = __importDefault(require('superagent'));
 // 获取当前时间戳
-export const currentDate = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
-
-export async function getWebHTMLstr(url: string) {
-  return Charset(SuperAgent).get(url).charset('utf-8').buffer(true);
+exports.currentDate = (0, moment_1.default)(new Date()).format('YYYY-MM-DD HH:mm:ss');
+async function getWebHTMLstr(url) {
+  return (0, superagent_charset_1.default)(superagent_1.default).get(url).charset('utf-8').buffer(true);
 }
-
-export function clearEmptyValue(objData: { [key: string]: any }) {
-  const newObjData: { [key: string]: any } = {};
+exports.getWebHTMLstr = getWebHTMLstr;
+function clearEmptyValue(objData) {
+  const newObjData = {};
   const itemArr = Object.keys(objData);
   itemArr.forEach((item) => {
     if (objData[item] === undefined || objData[item] === null || objData[item] === '') {
@@ -19,8 +32,9 @@ export function clearEmptyValue(objData: { [key: string]: any }) {
   });
   return newObjData;
 }
+exports.clearEmptyValue = clearEmptyValue;
 /** 用户与update set方法 */
-export function ObjToStrQuote(objData: { [key: string]: any }) {
+function ObjToStrQuote(objData) {
   let Str = '';
   const itemArr = Object.keys(objData);
   itemArr.forEach((item, index) => {
@@ -40,8 +54,8 @@ export function ObjToStrQuote(objData: { [key: string]: any }) {
   });
   return Str;
 }
-
-export function ObjToStrQuoteWhere(objData: { [key: string]: any }) {
+exports.ObjToStrQuote = ObjToStrQuote;
+function ObjToStrQuoteWhere(objData) {
   let Str = '';
   const itemArr = Object.keys(objData);
   itemArr.forEach((item, index) => {
@@ -63,7 +77,8 @@ export function ObjToStrQuoteWhere(objData: { [key: string]: any }) {
   });
   return Str;
 }
-export function ObjStr(objData: { [key: string]: any }) {
+exports.ObjToStrQuoteWhere = ObjToStrQuoteWhere;
+function ObjStr(objData) {
   const itemArr = Object.keys(objData);
   let str = '';
   itemArr.forEach((item) => {
@@ -76,3 +91,4 @@ export function ObjStr(objData: { [key: string]: any }) {
   });
   return str.substring(0, str.length - 1);
 }
+exports.ObjStr = ObjStr;
